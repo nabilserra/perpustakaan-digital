@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Perpustakaan Digital</title>
+  <link rel="stylesheet" href="newmember.css">
+</head>
+<body>
+
+  <header>
+        <a href="index.html">
+            <img src="logoperpus.jpeg" alt="Logo Perpustakaan">
+        </a>
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="About.html">About</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="newmember.html">Member Baru</a>
+            <a href="peminjaman.html">Pinjam</a>
+            <a href="formulir.html">Usulan Buku</a>
+        </nav>
+    </header>
+
+  <div class="judul">
+    <h1>Perpustakaan Digital</h1>
+    <h2>Teknologi Informasi</h2>
+  </div>
+
+  <div class="form" id="formDaftar">
+    <h2>Pendaftaran Member Baru</h2>
+
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama">
+
+    <label>NIM / No. Identitas</label>
+    <input type="text" id="nim">
+
+    <label>Tanggal Lahir</label>
+    <input type="date" id="tgl">
+
+    <label>Jenis Kelamin</label>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Laki-laki"> Laki-laki</label>
+      <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+    </div>
+
+    <label>Program Studi</label>
+    <select id="prodi">
+      <option value="">-- Pilih Program Studi --</option>
+      <option>Teknologi Informasi</option>
+      <option>Sistem Informasi</option>
+      <option>Lainnya</option>
+    </select>
+
+    <label>Alamat</label>
+    <textarea id="alamat" rows="3"></textarea>
+
+    <label>Scan KTM / KTP</label>
+    <input type="file" id="ktm" accept=".pdf,image/*">
+
+    <div class="checkbox">
+      <label><input type="checkbox" id="setuju"> Saya setuju mematuhi peraturan Perpustakaan Digital</label>
+    </div>
+
+    <div class="tombol">
+      <button type="button" onclick="daftar()">Daftar</button>
+      <button type="button" class="reset" onclick="location.reload()">Reset</button>
+    </div>
+  </div>
+
+  <div class="form" id="hasil" hidden></div>
+
+  <footer>
+    <p>&copy; 2026 Perpustakaan Digital - Kelompok A4 - Teknologi Informasi UIN Mataram</p>
+  </footer>
+
+  <script>
+    function daftar() {
+      const nama   = document.getElementById("nama").value;
+      const nim    = document.getElementById("nim").value;
+      const tgl    = document.getElementById("tgl").value;
+      const prodi  = document.getElementById("prodi").value;
+      const alamat = document.getElementById("alamat").value;
+      const gender = document.querySelector("input[name='gender']:checked");
+      const file   = document.getElementById("ktm").files[0];
+      const setuju = document.getElementById("setuju").checked;
+
+      if (!nama || !nim || !tgl || !gender || !prodi || !file || !setuju) {
+        alert("Semua data wajib diisi!");
+        return;
+      }
+
+      let gambar = "";
+      if (file.type.startsWith("image/")) {
+        gambar = `<img src="${URL.createObjectURL(file)}" alt="Berkas" style="max-width:100%; margin-top:10px; border-radius:8px;">`;
+      }
+
+      document.getElementById("hasil").innerHTML = `
+        <h2>Pendaftaran Berhasil</h2>
+        <div>Nama: ${nama}</div>
+        <div>NIM: ${nim}</div>
+        <div>Tanggal Lahir: ${tgl}</div>
+        <div>Jenis Kelamin: ${gender.value}</div>
+        <div>Program Studi: ${prodi}</div>
+        <div>Alamat: ${alamat}</div>
+        <div>Berkas: ${file.name}</div>
+        ${gambar}`;
+
+      document.getElementById("formDaftar").hidden = true;
+      document.getElementById("hasil").hidden = false;
+    }
+  </script>
+</body>
+</html>
