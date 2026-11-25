@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Perpustakaan Digital</title>
+  <link rel="stylesheet" href="peminjaman.css">
+</head>
+<body>
+
+  <header>
+    <img src="logoperpus.jpeg" alt="Logo">
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="About.html">About</a>
+      <a href="katalog.html">Katalog</a>
+      <a href="newmember.html">Member Baru</a>
+      <a href="peminjaman.html">Pinjam</a>
+      <a href="formulir.html">Usulan Buku</a>
+    </nav>
+  </header>
+
+  <div class="judul">
+    <h1>Perpustakaan Digital</h1>
+    <h2>Teknologi Informasi</h2>
+  </div>
+
+  <div class="form" id="formPinjam">
+    <h2>Form Peminjaman Buku</h2>
+
+    <label>Nama Lengkap</label>
+    <input type="text" id="nama">
+
+    <label>NIM / No. Identitas</label>
+    <input type="text" id="nim">
+
+    <label>Judul Buku</label>
+    <select id="buku">
+      <option value="">-- Pilih Buku --</option>
+      <option>Ilmu Pengetahuan Alam</option>
+      <option>Sejarah</option>
+      <option>Matematika</option>
+      <option>Fisika</option>
+      <option>Kimia</option>
+    </select>
+
+    <label>Tanggal Pinjam</label>
+    <input type="date" id="tglPinjam">
+
+    <label>Tanggal Kembali</label>
+    <input type="date" id="tglKembali">
+
+    <label>Scan KTM / Kartu Member</label>
+    <input type="file" id="berkas" accept=".pdf,image/*">
+
+    <div class="checkbox">
+      <label><input type="checkbox" id="setuju"> Saya setuju mengembalikan buku tepat waktu</label>
+    </div>
+
+    <div class="tombol">
+      <button type="button" onclick="pinjam()">Pinjam</button>
+      <button type="button" class="reset" onclick="location.reload()">Reset</button>
+    </div>
+  </div>
+
+  <div class="form" id="hasil" hidden></div>
+
+  <footer>
+    <p>&copy; 2026 Perpustakaan Digital - Kelompok A4 - Teknologi Informasi UIN Mataram</p>
+  </footer>
+
+  <script>
+    function pinjam() {
+      const nama       = document.getElementById("nama").value;
+      const nim        = document.getElementById("nim").value;
+      const buku       = document.getElementById("buku").value;
+      const tglPinjam  = document.getElementById("tglPinjam").value;
+      const tglKembali = document.getElementById("tglKembali").value;
+      const berkas     = document.getElementById("berkas").files[0];
+      const setuju     = document.getElementById("setuju").checked;
+
+      if (!nama || !nim || !buku || !tglPinjam || !tglKembali || !berkas || !setuju) {
+        alert("Semua data wajib diisi!");
+        return;
+      }
+
+      if (tglKembali < tglPinjam) {
+        alert("Tanggal kembali tidak boleh sebelum tanggal pinjam!");
+        return;
+      }
+
+      let gambar = "";
+      if (berkas.type.startsWith("image/")) {
+        gambar = `<img src="${URL.createObjectURL(berkas)}" alt="Berkas" style="max-width:100%; margin-top:10px; border-radius:8px;">`;
+      }
+
+      document.getElementById("hasil").innerHTML = `
+        <h2>Peminjaman Berhasil</h2>
+        <div>Nama: ${nama}</div>
+        <div>NIM: ${nim}</div>
+        <div>Judul Buku: ${buku}</div>
+        <div>Tanggal Pinjam: ${tglPinjam}</div>
+        <div>Tanggal Kembali: ${tglKembali}</div>
+        <div>Berkas: ${berkas.name}</div>
+        ${gambar}`;
+
+      document.getElementById("formPinjam").hidden = true;
+      document.getElementById("hasil").hidden = false;
+    }
+  </script>
+</body>
+</html>

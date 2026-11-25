@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;   
+    background-color: white;        
+    color: black;                   
+    line-height: 1.6;                
+    margin: 0;                        
+    padding: 0;
+    min-height: 100vh;                
+    display: flex;                   
+    flex-direction: column;
+}
+
+body > *:not(header):not(footer) {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > *:has(+ footer) {
+    margin-bottom: 30px;
+}
+
+header {
+    display: flex;                    
+    justify-content: space-between;   
+    align-items: center;             
+    background-color: darkslategray;
+    width: 100%;                     
+    padding: 10px 30px;
+    margin-bottom: 25px;
+}
+
+header img {
+    display: block;                   
+    height: 70px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;            
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: firebrick;
+}     
+
+h1 {
+    text-align: center;
+    color: firebrick;
+    font-size: 36px;
+}
+
+h2 {
+    text-align: center;
+    color: firebrick;
+    font-size: 22px;
+}
+
+h3 {
+    color: darkslategray;
+    font-size: 20px;
+    border-left: 5px solid firebrick;
+    padding-left: 10px;
+}
+
+h4 {
+    color: darkslategray;
+    font-size: 16px;
+}
+
+p {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;              
+    border: 1px solid #dddddd;
+    text-align: justify;              
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    width: 100%;                     
+    padding: 15px;
+    margin-top: auto;             
+}
+
+footer p {
+    background: none;                 
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    margin: 0;
+}
+
+.judul {
+    text-align: center;
+    color: firebrick;
+    margin-top: 0;
+}
+
+.form {
+    background-color: white;
+    max-width: 600px;
+    padding: 20px 30px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.form h2 {
+    text-align: left;
+    color: firebrick;
+    font-size: 22px;
+    border-left: 5px solid firebrick; 
+    padding-left: 10px;
+    margin-top: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: firebrick;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px dashed darkslategray;
+    border-radius: 5px;
+}
+
+.radio-group label,
+.checkbox label {
+    display: inline-block;
+    font-weight: normal;
+    color: black;
+    margin-right: 15px;
+}
+
+.checkbox {
+    margin-top: 20px;
+}
+
+.tombol {
+    margin-top: 25px;
+    text-align: center;
+}
+
+button,
+input[type="submit"] {
+    background-color: firebrick;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: darkred;        
+}
+
+button.reset {
+    background-color: darkslategray;
+}
+
+button.reset:hover {
+    background-color: black;
+}
+
+.judul + p {
+    text-align: center;
+    color: darkslategray;
+    font-size: 18px;
+    background: none;
+    border: none;
+    margin-top: 5px;
+}

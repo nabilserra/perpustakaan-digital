@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;   
+    background-color: white;       
+    color: black;                  
+    line-height: 1.6;                
+    margin: 0;                        
+    padding: 0;
+    min-height: 100vh;                
+    display: flex;                   
+    flex-direction: column;
+}
+
+body > *:not(header):not(footer) {
+    width: calc(100% - 40px);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body > *:nth-last-child(2) {
+    margin-bottom: 30px;
+}
+
+header {
+    display: flex;                    
+    justify-content: space-between;   
+    align-items: center;              
+    background-color: darkslategray;
+    width: 100%;                      
+    padding: 10px 30px;
+    margin-bottom: 25px;
+}
+
+header img {
+    display: block;                   
+    height: 70px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;            
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: firebrick;      
+}
+
+h1 {
+    text-align: center;
+    color: firebrick;
+    font-size: 36px;
+}
+
+h2 {
+    text-align: center;
+    color: firebrick;
+    font-size: 22px;
+}
+
+h3 {
+    color: darkslategray;
+    font-size: 20px;
+    border-left: 5px solid firebrick;
+    padding-left: 10px;
+}
+
+h4 {
+    color: darkslategray;
+    font-size: 16px;
+}
+
+p {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;              
+    border: 1px solid #dddddd;
+    text-align: justify;             
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    width: 100%;                     
+    padding: 15px;
+    margin-top: auto;                 
+}
+
+footer p {
+    background: none;                
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    margin: 0;
+}
+
+.total-koleksi {
+    text-align: center;
+    font-weight: bold;
+    background-color: #f4f4f4;
+    color: darkslategray;
+}
