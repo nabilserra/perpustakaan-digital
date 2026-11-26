@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengusulan Buku Baru</title>
+    <link rel="stylesheet" href="formulir.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="gambar.jpeg" alt="Logo Perpustakaan">
+        </a>
+
+        <nav>
+            <a href="index.html">Beranda</a>
+            <a href="About.html">About</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="newmember.html">Member Baru</a>
+            <a href="peminjaman.html">Pinjam</a>
+
+        </nav>
+    </header>
+
+    <h1>Formulir Pengusulan Buku Baru</h1>
+
+    <div class="isi-formulir">
+
+        <label for="judul">Judul Buku:</label>
+        <input type="text" id="judul" name="judul" required>
+        <br><br>
+
+        <label for="penulis">Nama Penulis:</label>
+        <input type="text" id="penulis" name="penulis" required>
+        <br><br>
+
+        <label for="penerbit">Penerbit:</label>
+        <input type="text" id="penerbit" name="penerbit">
+        <br><br>
+
+        <label for="tahun">Tahun Terbit:</label>
+        <input type="number" id="tahun" name="tahun">
+        <br><br>
+
+        <label for="kategori">Kategori Buku:</label>
+        <select id="kategori" name="kategori" required>
+            <option value="">-- Pilih Kategori --</option>
+            <option value="fiksi">Fiksi</option>
+            <option value="non-fiksi">Non-Fiksi</option>
+            <option value="matematika">Matematika</option>
+            <option value="ips">Ilmu Pengetahuan Sosial</option>
+            <option value="ipa">Ilmu Pengetahuan Alam</option>
+            <option value="teknologi">Teknologi</option>
+            <option value="lainnya">Lainnya</option>
+        </select>
+        <br><br>
+
+        <label for="alasan">Alasan Pengusulan:</label>
+        <textarea id="alasan" name="alasan" rows="4" required></textarea>
+        <br><br>
+
+        <label for="pengusul">Nama Pengusul:</label>
+        <input type="text" id="pengusul" name="pengusul" required>
+        <br><br>
+
+        <button type="button" onclick="kirim()">Kirim Usulan</button>
+
+    </div>
+
+    <script src="formulir.js"></script>
+
+</body>
+</html>

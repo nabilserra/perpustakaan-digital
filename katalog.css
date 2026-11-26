@@ -1,0 +1,149 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 17px;
+}
+
+header {
+    background-color: darkslategray;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: lightgray;
+}
+
+.header,
+.kategori,
+.buku {
+    background-color: white;
+    width: auto;
+    max-width: none;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px lightgray;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    color: firebrick;
+    font-size: 36px;
+    margin: 15px 0 35px;
+}
+
+.header p {
+    color: firebrick;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+input[type="search"] {
+    padding: 12px;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 18px;
+    background-color: firebrick;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+.kategori {
+    text-align: center;
+    padding: 20px;
+}
+
+.kategori select {
+    padding: 12px;
+    width: 200px;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.buku {
+    padding: 20px;
+}
+
+.buku h2 {
+    color: darkslategray;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid lightgray;
+}
+
+.buku ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.buku li {
+    background-color: whitesmoke;
+    padding: 10px 12px;
+    margin-bottom: 6px;
+    border-left: 4px solid firebrick;
+    border-radius: 5px;
+}
+
+.buku li:hover {
+    background-color: mistyrose;
+}
+
+footer {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 8px;
+}
+
+footer p {
+    margin: 3px;
+    font-size: 13px;
+}
